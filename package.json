@@ -1,0 +1,24 @@
+{
+  "name": "power-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanghuibo/power-proxy.git"
+  },
+  "author": "tanghuibo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanghuibo/power-proxy/issues"
+  },
+  "homepage": "https://github.com/tanghuibo/power-proxy#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graceful-exit": "^0.5.0",
+    "http-proxy-middleware": "^0.20.0"
+  }
+}
