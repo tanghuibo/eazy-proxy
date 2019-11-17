@@ -3,20 +3,34 @@ import { Typography, Input, Layout, Button, Switch, Icon } from "antd";
 
 import style from "./app.module.css";
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Content } = Layout;
 const { Search } = Input;
 const { Title } = Typography;
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      editMode: false
+    };
+    this.editModeOnChange = this.editModeOnChange.bind(this);
+  }
+  editModeOnChange(editMode) {
+    this.setState({
+      editMode
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <Header>
-          <Title className={style.title} style={{ color: "#FFFFFF" }}>
-            power proxy
+          <Title className={style.header}>
+            <span className={style.headerTitle}>Power Proxy</span>
           </Title>
         </Header>
         <Content className={style.content}>
-          <div>
+          <div className={style.contentHeader}>
             <Search
               size="large"
               placeholder="输入关键词搜索"
@@ -24,51 +38,59 @@ class App extends Component {
               className={style.search}
               style={{ width: 300 }}
             />
-            <div className={style.headerButtonDiv}>
-              <Button
-                type="primary"
-                className={style.headerButton}
-                size="large"
-              >
-                新增
-              </Button>
-              <Button
-                type="primary"
-                className={style.headerButton}
-                size="large"
-              >
-                删除
-              </Button>
-              <Button
-                type="primary"
-                className={style.headerButton}
-                size="large"
-              >
-                导入
-              </Button>
-              <Button
-                type="primary"
-                className={style.headerButton}
-                size="large"
-              >
-                导出
-              </Button>
-            </div>
+            {this.state.editMode ? (
+              <div className={style.contentHeaderButtonDiv}>
+                <Button
+                  type="primary"
+                  className={style.contentHeaderButton}
+                  size="large"
+                >
+                  新增
+                </Button>
+                <Button
+                  type="primary"
+                  className={style.contentHeaderButton}
+                  size="large"
+                >
+                  删除
+                </Button>
+                <Button
+                  type="primary"
+                  className={style.contentHeaderButton}
+                  size="large"
+                >
+                  导入
+                </Button>
+                <Button
+                  type="primary"
+                  className={style.contentHeaderButton}
+                  size="large"
+                >
+                  导出
+                </Button>
+              </div>
+            ) : null}
 
-            <div className={style.headerRightDiv}>
-              <Button size="large" type="link" style={{ paddingRight: 3 }}>
-                开启编辑模式
+            <div className={style.contentHeaderRightDiv}>
+              <Button
+                size="large"
+                type="link"
+                onClick={() => this.editModeOnChange(!this.state.editMode)}
+                style={{ paddingRight: 3 }}
+              >
+                {this.state.editMode ? "关闭编辑模式" : "开启编辑模式"}
               </Button>
               <Switch
                 size="large"
                 checkedChildren={<Icon type="check" />}
                 unCheckedChildren={<Icon type="close" />}
-                defaultChecked
+                onChange={this.editModeOnChange}
+                checked={this.state.editMode}
               />
             </div>
           </div>
 
-          <Content>123</Content>
+          <Content></Content>
         </Content>
       </div>
     );

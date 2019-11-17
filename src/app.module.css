@@ -1,19 +1,38 @@
-.title {
-    text-align: center;
+.header {
+    display: flex;
+    justify-content: center;
 }
+
+.headerTitle {
+    text-align: center;
+    color: white;
+    line-height: 64px;
+    cursor: pointer; 
+}
+
+.headerTitle::selection {
+    background-color: transparent;
+}
+
 .content {
     margin: 10px;
 }
-.headerButtonDiv {
+
+.contentHeader {
+    height: 40.5px;
+}
+
+.contentHeaderButtonDiv {
     padding-left: 10px;
     display: inline;
 }
-.headerButton {
 
+.contentHeaderButton {
     margin: 0 5px;
 
 }
-.headerRightDiv {
+
+.contentHeaderRightDiv {
     float: right;
     height: 40.5px;
     display: flex;
