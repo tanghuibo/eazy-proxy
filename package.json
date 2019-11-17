@@ -21,12 +21,15 @@
   "homepage": "https://github.com/tanghuibo/power-proxy#readme",
   "dependencies": {
     "antd": "^3.25.1",
+    "babel-plugin-react-html-attrs": "^2.1.0",
+    "css-loader": "^3.2.0",
     "express": "^4.17.1",
     "express-graceful-exit": "^0.5.0",
     "http-proxy-middleware": "^0.20.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "style-loader": "^1.0.0"
   },
   "eslintConfig": {
     "extends": "react-app"

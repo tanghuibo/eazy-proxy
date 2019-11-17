@@ -2080,6 +2080,11 @@ babel-plugin-named-asset-import@^0.3.4:
   resolved "https://registry.npm.taobao.org/babel-plugin-named-asset-import/download/babel-plugin-named-asset-import-0.3.4.tgz?cache=0&sync_timestamp=1571960905101&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fbabel-plugin-named-asset-import%2Fdownload%2Fbabel-plugin-named-asset-import-0.3.4.tgz#4a8fc30e9a3e2b1f5ed36883386ab2d84e1089bd"
   integrity sha1-So/DDpo+Kx9e02iDOGqy2E4Qib0=
 
+babel-plugin-react-html-attrs@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/babel-plugin-react-html-attrs/download/babel-plugin-react-html-attrs-2.1.0.tgz#ec92006bca1d07e07d27823afae86dac33fabad5"
+  integrity sha1-7JIAa8odB+B9J4I6+uhtrDP6utU=
+
 babel-plugin-syntax-object-rest-spread@^6.8.0:
   version "6.13.0"
   resolved "https://registry.npm.taobao.org/babel-plugin-syntax-object-rest-spread/download/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
@@ -3072,6 +3077,24 @@ css-loader@2.1.1:
     postcss-modules-values "^2.0.0"
     postcss-value-parser "^3.3.0"
     schema-utils "^1.0.0"
+
+css-loader@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.npm.taobao.org/css-loader/download/css-loader-3.2.0.tgz#bb570d89c194f763627fcf1f80059c6832d009b2"
+  integrity sha1-u1cNicGU92Nif88fgAWcaDLQCbI=
+  dependencies:
+    camelcase "^5.3.1"
+    cssesc "^3.0.0"
+    icss-utils "^4.1.1"
+    loader-utils "^1.2.3"
+    normalize-path "^3.0.0"
+    postcss "^7.0.17"
+    postcss-modules-extract-imports "^2.0.0"
+    postcss-modules-local-by-default "^3.0.2"
+    postcss-modules-scope "^2.1.0"
+    postcss-modules-values "^3.0.0"
+    postcss-value-parser "^4.0.0"
+    schema-utils "^2.0.0"
 
 css-prefers-color-scheme@^3.1.1:
   version "3.1.1"
@@ -5011,7 +5034,7 @@ icss-replace-symbols@^1.1.0:
   resolved "https://registry.npm.taobao.org/icss-replace-symbols/download/icss-replace-symbols-1.1.0.tgz#06ea6f83679a7749e386cfe1fe812ae5db223ded"
   integrity sha1-Bupvg2ead0njhs/h/oEq5dsiPe0=
 
-icss-utils@^4.1.0:
+icss-utils@^4.0.0, icss-utils@^4.1.0, icss-utils@^4.1.1:
   version "4.1.1"
   resolved "https://registry.npm.taobao.org/icss-utils/download/icss-utils-4.1.1.tgz#21170b53789ee27447c2f47dd683081403f9a467"
   integrity sha1-IRcLU3ie4nRHwvR91oMIFAP5pGc=
@@ -7845,6 +7868,16 @@ postcss-modules-local-by-default@^2.0.6:
     postcss-selector-parser "^6.0.0"
     postcss-value-parser "^3.3.1"
 
+postcss-modules-local-by-default@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.npm.taobao.org/postcss-modules-local-by-default/download/postcss-modules-local-by-default-3.0.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-modules-local-by-default%2Fdownload%2Fpostcss-modules-local-by-default-3.0.2.tgz#e8a6561be914aaf3c052876377524ca90dbb7915"
+  integrity sha1-6KZWG+kUqvPAUodjd1JMqQ27eRU=
+  dependencies:
+    icss-utils "^4.1.1"
+    postcss "^7.0.16"
+    postcss-selector-parser "^6.0.2"
+    postcss-value-parser "^4.0.0"
+
 postcss-modules-scope@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/postcss-modules-scope/download/postcss-modules-scope-2.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-modules-scope%2Fdownload%2Fpostcss-modules-scope-2.1.0.tgz#ad3f5bf7856114f6fcab901b0502e2a2bc39d4eb"
@@ -7859,6 +7892,14 @@ postcss-modules-values@^2.0.0:
   integrity sha1-R5tG3Axco9x/pScIUYNrnscVL2Q=
   dependencies:
     icss-replace-symbols "^1.1.0"
+    postcss "^7.0.6"
+
+postcss-modules-values@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/postcss-modules-values/download/postcss-modules-values-3.0.0.tgz#5b5000d6ebae29b4255301b4a3a54574423e7f10"
+  integrity sha1-W1AA1uuuKbQlUwG0o6VFdEI+fxA=
+  dependencies:
+    icss-utils "^4.0.0"
     postcss "^7.0.6"
 
 postcss-nesting@^7.0.0:
@@ -8109,7 +8150,7 @@ postcss-selector-parser@^5.0.0, postcss-selector-parser@^5.0.0-rc.3, postcss-sel
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss-selector-parser@^6.0.0:
+postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.2:
   version "6.0.2"
   resolved "https://registry.npm.taobao.org/postcss-selector-parser/download/postcss-selector-parser-6.0.2.tgz#934cf799d016c83411859e09dcecade01286ec5c"
   integrity sha1-k0z3mdAWyDQRhZ4J3Oyt4BKG7Fw=
@@ -8142,7 +8183,7 @@ postcss-value-parser@^3.0.0, postcss-value-parser@^3.3.0, postcss-value-parser@^
   resolved "https://registry.npm.taobao.org/postcss-value-parser/download/postcss-value-parser-3.3.1.tgz#9ff822547e2893213cf1c30efa51ac5fd1ba8281"
   integrity sha1-n/giVH4okyE88cMO+lGsX9G6goE=
 
-postcss-value-parser@^4.0.2:
+postcss-value-parser@^4.0.0, postcss-value-parser@^4.0.2:
   version "4.0.2"
   resolved "https://registry.npm.taobao.org/postcss-value-parser/download/postcss-value-parser-4.0.2.tgz#482282c09a42706d1fc9a069b73f44ec08391dc9"
   integrity sha1-SCKCwJpCcG0fyaBptz9E7Ag5Hck=
@@ -8165,7 +8206,7 @@ postcss@7.0.14:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.5, postcss@^7.0.6:
+postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.5, postcss@^7.0.6:
   version "7.0.21"
   resolved "https://registry.npm.taobao.org/postcss/download/postcss-7.0.21.tgz#06bb07824c19c2021c5d056d5b10c35b989f7e17"
   integrity sha1-BrsHgkwZwgIcXQVtWxDDW5iffhc=
@@ -10116,7 +10157,7 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.npm.taobao.org/strip-json-comments/download/strip-json-comments-2.0.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstrip-json-comments%2Fdownload%2Fstrip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
 
-style-loader@1.0.0:
+style-loader@1.0.0, style-loader@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/style-loader/download/style-loader-1.0.0.tgz#1d5296f9165e8e2c85d24eee0b7caf9ec8ca1f82"
   integrity sha1-HVKW+RZejiyF0k7uC3yvnsjKH4I=

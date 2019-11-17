@@ -1,0 +1,21 @@
+.title {
+    text-align: center;
+}
+.content {
+    margin: 10px;
+}
+.headerButtonDiv {
+    padding-left: 10px;
+    display: inline;
+}
+.headerButton {
+
+    margin: 0 5px;
+
+}
+.headerRightDiv {
+    float: right;
+    height: 40.5px;
+    display: flex;
+    align-items: center;
+}
