@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Typography, Input, Layout, Button, Switch, Icon } from "antd";
+import ProxyEditModal from "./components/ProxyEditModal/index";
 
 import style from "./app.module.css";
 
@@ -14,11 +15,16 @@ class App extends Component {
       editMode: false
     };
     this.editModeOnChange = this.editModeOnChange.bind(this);
+    this.addBtnOnClick = this.addBtnOnClick.bind(this);
   }
   editModeOnChange(editMode) {
     this.setState({
       editMode
     });
+  }
+
+  addBtnOnClick() {
+    this.refs.proxyEditModal.showAdd();
   }
 
   render() {
@@ -44,6 +50,7 @@ class App extends Component {
                   type="primary"
                   className={style.contentHeaderButton}
                   size="large"
+                  onClick={this.addBtnOnClick}
                 >
                   新增
                 </Button>
@@ -90,7 +97,9 @@ class App extends Component {
             </div>
           </div>
 
-          <Content></Content>
+          <Content>
+            <ProxyEditModal ref="proxyEditModal"/>
+          </Content>
         </Content>
       </div>
     );
