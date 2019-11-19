@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Typography, Input, Layout, Button, Switch, Icon } from "antd";
-import ProxyEditModal from "./components/ProxyEditModal/index";
+import ProxyFormModal from "./components/ProxyFormModal/index";
 
 import style from "./app.module.css";
 
@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   addBtnOnClick() {
-    this.refs.proxyEditModal.showAdd();
+    this.refs.proxyFormModal.showModal();
   }
 
   render() {
@@ -98,7 +98,7 @@ class App extends Component {
           </div>
 
           <Content>
-            <ProxyEditModal ref="proxyEditModal"/>
+            <ProxyFormModal ref="proxyFormModal"/>
           </Content>
         </Content>
       </div>
