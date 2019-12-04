@@ -1,5 +1,14 @@
 import React, { Component } from "react";
-import { Typography, Input, Layout, Button, Switch, Icon } from "antd";
+import {
+  Typography,
+  Input,
+  Layout,
+  Button,
+  Switch,
+  Icon,
+  Table,
+  Badge
+} from "antd";
 import ProxyFormModal from "./components/ProxyFormModal/index";
 
 import style from "./app.module.css";
@@ -7,6 +16,39 @@ import style from "./app.module.css";
 const { Header, Content } = Layout;
 const { Search } = Input;
 const { Title } = Typography;
+
+const dataSource = [
+  {
+    key: "1",
+    name: "胡彦斌",
+    age: 32,
+    address: "西湖区湖底公园1号"
+  },
+  {
+    key: "2",
+    name: "胡彦祖",
+    age: 42,
+    address: "西湖区湖底公园1号"
+  }
+];
+
+const columns = [
+  {
+    title: "端口",
+    dataIndex: "port",
+    key: "port"
+  },
+  {
+    title: "名称",
+    dataIndex: "name",
+    key: "name"
+  },
+  {
+    title: "描述",
+    dataIndex: "desc",
+    key: "desc"
+  }
+];
 class App extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +70,12 @@ class App extends Component {
   }
 
   render() {
+    const rowSelection = {
+      selectedRowKeys: this.state.selectedRowKeys,
+      onChange: selectedRowKeys => {
+        this.setState({ selectedRowKeys });
+      }
+    };
     return (
       <div className="App">
         <Header>
@@ -54,13 +102,27 @@ class App extends Component {
                 >
                   新增
                 </Button>
-                <Button
-                  type="primary"
+                <Badge
                   className={style.contentHeaderButton}
-                  size="large"
+                  count={
+                    this.state.selectedRowKeys
+                      ? this.state.selectedRowKeys.length
+                      : 0
+                  }
                 >
-                  删除
-                </Button>
+                  <Button
+                    disabled={
+                      this.state.selectedRowKeys
+                        ? this.state.selectedRowKeys.length === 0
+                        : true
+                    }
+                    type="primary"
+                    size="large"
+                  >
+                    删除
+                  </Button>
+                </Badge>
+
                 <Button
                   type="primary"
                   className={style.contentHeaderButton}
@@ -68,13 +130,18 @@ class App extends Component {
                 >
                   导入
                 </Button>
-                <Button
-                  type="primary"
+                <Badge
                   className={style.contentHeaderButton}
-                  size="large"
+                  count={
+                    this.state.selectedRowKeys
+                      ? this.state.selectedRowKeys.length
+                      : 0
+                  }
                 >
-                  导出
-                </Button>
+                  <Button type="primary" size="large">
+                    导出
+                  </Button>
+                </Badge>
               </div>
             ) : null}
 
@@ -96,9 +163,16 @@ class App extends Component {
               />
             </div>
           </div>
-
+          <div className={style.contentView}>
+            <Table
+              expandedRowRender={record => <div>{JSON.stringify(record)}</div>}
+              rowSelection={this.state.editMode ? rowSelection : null}
+              dataSource={dataSource}
+              columns={columns}
+            />
+          </div>
           <Content>
-            <ProxyFormModal ref="proxyFormModal"/>
+            <ProxyFormModal ref="proxyFormModal" />
           </Content>
         </Content>
       </div>

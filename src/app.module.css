@@ -28,7 +28,7 @@
 }
 
 .contentHeaderButton {
-    margin: 0 5px;
+    margin: 0 15px;
 
 }
 
@@ -37,4 +37,8 @@
     height: 40.5px;
     display: flex;
     align-items: center;
+}
+
+.contentView {
+    padding-top: 10px;
 }
